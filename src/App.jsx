@@ -6,14 +6,25 @@ import "./App.css";
 function App() {
   const [page, setPage] = useState("home");
 
-  if (page === "plants") return <ProductList goCart={() => setPage("cart")} />;
-  if (page === "cart") return <CartItem goHome={() => setPage("plants")} />;
+  // Navigate to Plants page
+  if (page === "plants") {
+    return <ProductList goCart={() => setPage("cart")} />;
+  }
 
+  // Navigate to Cart page
+  if (page === "cart") {
+    return <CartItem goHome={() => setPage("plants")} />;
+  }
+
+  // Landing Page
   return (
-    <div className="landing">
-      <div>
+    <div className="background-image">
+      <div className="landing">
         <h1>Paradise Nursery 🌱</h1>
-        <button onClick={() => setPage("plants")}>Get Started</button>
+        <p>Welcome to your one-stop shop for beautiful plants!</p>
+        <button onClick={() => setPage("plants")}>
+          Get Started
+        </button>
       </div>
     </div>
   );
