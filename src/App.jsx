@@ -4,16 +4,21 @@ import CartItem from "./components/CartItem";
 import "./App.css";
 
 function App() {
-  const [page, setPage] = useState("home");
+  const [showProducts, setShowProducts] = useState(false);
+  const [showCart, setShowCart] = useState(false);
 
-  // Navigate to Plants page
-  if (page === "plants") {
-    return <ProductList goCart={() => setPage("cart")} />;
+  // Show Cart Page
+  if (showCart) {
+    return <CartItem goHome={() => setShowCart(false)} />;
   }
 
-  // Navigate to Cart page
-  if (page === "cart") {
-    return <CartItem goHome={() => setPage("plants")} />;
+  // Show Product List
+  if (showProducts) {
+    return (
+      <ProductList
+        goCart={() => setShowCart(true)}
+      />
+    );
   }
 
   // Landing Page
@@ -22,7 +27,8 @@ function App() {
       <div className="landing">
         <h1>Paradise Nursery 🌱</h1>
         <p>Welcome to your one-stop shop for beautiful plants!</p>
-        <button onClick={() => setPage("plants")}>
+
+        <button onClick={() => setShowProducts(true)}>
           Get Started
         </button>
       </div>
