@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* REQUIRED CLASS */
 .background-image {
   height: 100vh;
   background-image: url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
@@ -8,6 +14,39 @@
   align-items: center;
 }
 
+/* Landing content */
 .landing {
   text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+}
+
+button:hover {
+  background-color: darkgreen;
+}
+
+/* Navbar */
+nav {
+  background-color: green;
+  padding: 10px;
+}
+
+nav button {
+  background: transparent;
+  color: white;
+  margin-right: 10px;
 }
